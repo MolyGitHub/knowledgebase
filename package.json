@@ -4,7 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
+  },
+  "repository":{
+    "type":"git",
+    "url":"git+https://github.com/MolyGitHub/knowledgebase.git"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +18,8 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "mongodb": "^3.3.2"
+  },
+  "engines": {
+    "node": "v8.11.4"
   }
 }

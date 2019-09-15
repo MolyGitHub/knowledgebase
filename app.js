@@ -95,9 +95,7 @@ app.get("/testFile", (req, res) => {
     console.log(out);
 });
 
-
-
-const port = "3000";
+const port = process.env.PORT ||"3000";
 const hostname = "localhost";
 app.listen(port, () => {
     console.log(`App running at http://${hostname}:${port}/`);
