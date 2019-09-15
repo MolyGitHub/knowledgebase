@@ -8,7 +8,8 @@ app.use(express.urlencoded());   //för att omvandla equest objekt till sträng/
 
 const MongoClient = require('mongodb').MongoClient;
 
-const url = 'mongodb://localhost:27017';
+//const url = 'mongodb://localhost:27017';
+const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/test'
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let db;
