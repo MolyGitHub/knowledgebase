@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KB Kommandon</title>
+
+    <link rel="stylesheet" href="/app.css">
+</head>
+
+<body>
+        <% include partials\nav%>
+    <section class="vw-80">
+        <form action="/command" method="POST">
+            <!-- matcha app.js app.post("/addCommand", function(req,res){ -->
+           <div class="wrapperForm">
+                <h1>SKAPA KOMMANDO</h1>
+            <p>
+                <label for="type">Typ av kommando:</label>
+                    <select name="type" id="type" required>
+                        <option>GIT</option>
+                        <option>WINDOWS</option>
+                        <option>NODE NPM</option>
+
+                    </select>
+                
+            </p>
+            <p>
+                <label for="command">Kommando:</label>
+                    <input type="text" name="command" placeholder="Namn på kommando" required></input>
+       
+            </p>
+            <p>
+                <label for="description"> Beskrivning:</label>
+                <input type="text" name="description" placeholder="beskrivning.." required></input>
+            </p>
+<div id="commandBtn">
+  <button class="btn" >Spara nytt kommando</button>
+</div>
+          
+       
+        </div>
+    </section>
+    </form>
+
+    <table class="userTable" align="center">
+        <thead>
+            <tr>
+                <th colspan="2"> LISTA ÖVER KOMMANDON</th>
+            </tr>
+            <tr>
+                <th>
+                    Kommando
+                </th>
+                <th>
+                    Beskrivning
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% command.forEach((cmd) => { %>
+            <tr>
+                <td><%= cmd.command %></td>
+                <td><%= cmd.description %></td>
+            </tr>
+            <%});%>
+        </tbody>
+    </table>
+
+
+
+
+
+</body>
+
+</html>

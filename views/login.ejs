@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inloggning</title>
+
+    <link rel="stylesheet" href="/app.css">
+</head>
+
+<body>
+    <form action="/login" method="POST">
+        <div class="main">
+            <section id="loginSection">
+                <div class="left">
+                    <header>
+                        <h1>Inloggning</h1>
+                    </header>
+
+                    <div>
+                        <label for="name">Ditt namn:</label>
+                        <input type="text" name="name" id="name" required placeholder="Förnamn Efternamn">
+                    </div>
+
+                    <div>
+                        <label for="psw">Lösenord:</label>
+                        <input type="password" name="psw" id="psw" required>
+                    </div>
+
+                    <div>
+                        <label for="regard">Hälsning:</label>
+                        <input type="text" name="regard" id="regard">
+                    </div>
+
+
+                    <div>
+                        <input class=btn type="submit" value="Logga in" />
+                    </div>
+                </div>
+
+                <div class="right">
+                    <img id=koala src="beKind.jpg" alt="picture koala" height="200px">
+                </div>
+            </section>
+        </div>
+    </form>
+
+
+</body>
+
+</html>

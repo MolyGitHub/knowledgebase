@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kb Användare</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <% include partials\nav%>
+    <header>
+        <div class="headerHome">
+            <div class="handwritten headerLeft"> 
+                <p></p>
+            </div>
+            <div class="headerCenter">
+                <h1>MoLy's Kunskapsbas - Frontend</h1>
+                <p>Användare som hittat hit:</p>
+            </div>
+            <div class="headerRight handwritten">&nbsp;</div>
+        </div>
+    </header>
+
+    <table class="userTable" align="center">
+        <thead>
+            <tr>
+                <th>
+                    Namn
+                </th>
+                <th>
+                    Hälsningar
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach((user) => { %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.regard %></td>
+            </tr>
+            <%});%>
+        </tbody>
+    </table>
+    <figure class=>
+        <img id="codemonky" src="mindful.gif" alt="Image codemonkey" srcset="">
+        <div class="handwritten">
+                <p>- Koda lugnt! -</p>
+            </div>
+        
+    </figure>
+        
+    
+
+
+</body>
+
+
+</html>
