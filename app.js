@@ -35,6 +35,10 @@ app.get("/home", (req, res) => {    //i views
     res.render("home");     
 });
 
+app.get("/home2", (req, res) => {    //i views
+    res.render("home2");     
+});
+
 app.get('/command', (req, res) => {
     const cmdCollection = db.collection('commands');
     cmdCollection.find({}).toArray(function (err, command) {
