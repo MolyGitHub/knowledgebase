@@ -11,7 +11,9 @@ const MongoClient = require('mongodb').MongoClient;
 //const url = 'mongodb://localhost:27017';
 //const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/knowledgebase?retryWrites=true';
 //const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/test';
-const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/knowledgebase';
+//const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/knowledgebase';
+
+const url = 'mongodb+srv://Monika:bqjNyaBXQzlWdwHi@cluster0-ygihn.mongodb.net/knowledgebase'
 //const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net';
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
