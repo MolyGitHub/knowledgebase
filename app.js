@@ -9,12 +9,9 @@ app.use(express.urlencoded());   //för att omvandla equest objekt till sträng/
 const MongoClient = require('mongodb').MongoClient;
 
 //const url = 'mongodb://localhost:27017';
-//const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/knowledgebase?retryWrites=true';
-//const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/test';
-//const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/knowledgebase';
+//const url = 'mongodb+srv://Monika:psw@cluster0-ygihn.mongodb.net/knowledgebase?retryWrites=true';
 
 const url = 'mongodb+srv://Monika:bqjNyaBXQzlWdwHi@cluster0-ygihn.mongodb.net/knowledgebase'
-//const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net';
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let db;
@@ -28,7 +25,10 @@ client.connect(function (err) {
 
 app.get("/", (req, res) => {
     res.render("login"); 
-    res.send('<html><body><h1>Hello World</h1>👋👋👋</body></html>');
+//    res.send('<html><body><h1>Hello World</h1>👋👋👋</body></html>');
+});
+app.get("/about", (req, res) => { 
+   res.send('<html><body><h1>Hello World</h1>👋👋👋</body></html>');
 });
 
 app.get("/home", (req, res) => {    //i views
