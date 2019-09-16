@@ -4,11 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "start:prod": "NODE_ENV=production nodemon server",
+    "debug": "ndb app.js"
   },
-  "repository":{
-    "type":"git",
-    "url":"git+https://github.com/MolyGitHub/knowledgebase.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MolyGitHub/knowledgebase.git"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +23,6 @@
     "mongodb": "^3.3.2"
   },
   "engines": {
-    "node": "v8.11.4"
+    "node": ">=12g.0.0"
   }
 }
