@@ -5,6 +5,7 @@ const fs = require('fs');             //fs paket fil i/o
 app.use(express.static("public"));   //  express hämtar filer i static folder css
 app.set("view engine","ejs");    //nu behöver vi inte filändelsen .ejs  anger att alla templates är ejs
 app.use(express.urlencoded());   //för att omvandla equest objekt till sträng/array behövs vid post eller body-parser
+app.set('views', path.join(__dirname, 'views'));
 
 const MongoClient = require('mongodb').MongoClient;
 
