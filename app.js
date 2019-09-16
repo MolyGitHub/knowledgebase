@@ -9,7 +9,10 @@ app.use(express.urlencoded());   //för att omvandla equest objekt till sträng/
 const MongoClient = require('mongodb').MongoClient;
 
 //const url = 'mongodb://localhost:27017';
-const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/test'
+//const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/knowledgebase?retryWrites=true';
+//const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/test';
+const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net/knowledgebase';
+//const url = 'mongodb+srv://Monika:stockholm@cluster0-ygihn.mongodb.net';
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let db;
@@ -29,9 +32,6 @@ app.get("/", (req, res) => {
 app.get("/home", (req, res) => {    //i views
     res.render("home.ejs");     
 });
-// app.get("/command", (req, res) => {    //i views
-//     res.render("command.ejs");     
-// });
 
 app.get('/command', (req, res) => {
     const cmdCollection = db.collection('commands');
@@ -39,15 +39,10 @@ app.get('/command', (req, res) => {
         res.render('command', {command: command});
     });
 });
-//app.get('/users', (req, res) => {
-// const usersCollection = db.collection('users');
-// usersCollection.find({}).toArray(function (err, users) {
-//     res.render('users', {users: users});
-// });
 
 app.post('/command',function(req,res) {
     const cmdGet = req.body.command;
-    console.log(cmdGet);
+//    console.log(cmdGet);
 
     const type = req.body.type;
     const command = req.body.command;
@@ -57,8 +52,7 @@ app.post('/command',function(req,res) {
         { type: type, command: command, description: description }
     ], function (err, result) {
     res.redirect("command");
-   
-        // res.render('command.ejs', {  command: cmdGet});   //skickar kommandon tillbaka
+  
     });
     
 });
@@ -93,11 +87,12 @@ app.get('/users', (req, res) => {
 app.get("/testFile", (req, res) => {
     const readable = fs.createReadStream("../Node-tour/data/tours-simple.json");
     const out = readable.pipe(res);  //läser in i stream
-    console.log(out);
+  //  console.log(out);
 });
 
 const port = process.env.PORT ||"3000";
 const hostname = "localhost";
 app.listen(port, () => {
-    console.log(`App running at http://${hostname}:${port}/`);
+    console.log(`App running at port ${port}/`);
+    // console.log(`App running at http://${hostname}:${port}/`);
 });
