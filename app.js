@@ -22,17 +22,17 @@ let db;
 client.connect(function (err) {
      if (err) throw err;
      db = client.db('knowledgebase');
-     console.log("Mongo connected")
+//     console.log("Mongo connected")
  });
 
 
 app.get("/", (req, res) => {
-    //res.send("Hello");
+    res.render("login"); 
     res.send('<html><body><h1>Hello World</h1>👋👋👋</body></html>');
 });
 
 app.get("/home", (req, res) => {    //i views
-    res.render("home.ejs");     
+    res.render("home");     
 });
 
 app.get('/command', (req, res) => {
