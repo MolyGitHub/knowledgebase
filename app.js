@@ -5,7 +5,7 @@ const fs = require('fs');             //fs paket fil i/o
 app.use(express.static("public"));   //  express hämtar filer i static folder css
 app.set("view engine","ejs");    //nu behöver vi inte filändelsen .ejs  anger att alla templates är ejs
 app.use(express.urlencoded());   //för att omvandla equest objekt till sträng/array behövs vid post eller body-parser
-app.set('views', path.join(__dirname, 'views'));
+//app.set('views', path.join(__dirname, 'views'));
 
 const MongoClient = require('mongodb').MongoClient;
 
@@ -26,7 +26,6 @@ client.connect(function (err) {
 
 app.get("/", (req, res) => {
     res.render("login"); 
-//    res.send('<html><body><h1>Hello World</h1>👋👋👋</body></html>');
 });
 app.get("/about", (req, res) => { 
    res.send('<html><body><h1>Hello World</h1>👋👋👋</body></html>');
@@ -100,6 +99,6 @@ app.get("/testFile", (req, res) => {
 const port = process.env.PORT ||"3000";
 const hostname = "localhost";
 app.listen(port, () => {
-    console.log(`App running at port ${port}/`);
+    console.log(`App running at port ${port}`);
     // console.log(`App running at http://${hostname}:${port}/`);
 });
